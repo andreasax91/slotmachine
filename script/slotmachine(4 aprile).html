@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JS slotmachine</title>
+
+ <style>
+
+/*
+.monster-darkgreen {
+  display:inline-block;
+  width:100px;
+  heigth:100px;
+  background-umage:url(reelSpin-480x400.png)
+  backgraund-position:-144px -64px;
+}
+
+.monster-yellow {
+  display:inline-block;
+  width:142px;
+  heigth:95px;
+  background-umage: url(reelSpin-480x400.png)
+  backgraund-position:-144px -190px;
+}
+
+ .monster-blue {
+  display:inline-block;
+  width:142px;
+  heigth:95px;
+  background-umage: url(reelSpin-480x400.png)
+  backgraund-position:-144px -190px;
+}*/
+
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script>
+/*$( document ).ready( function() {
+/*  $('<i>')
+    .css({
+      display:'inline-block',
+      backgroundImage:'url(reelSpin-480x400.png)',
+      width:68,
+      height:200,
+    })
+    .appendTo('body');
+
+    $('<i>')
+      .css({
+        display:'inline-block',
+        backgroundImage:'url(reelSpin-480x400.png)',
+        width:68,
+        height:200,
+        backgroundPosition:'-69px 0'
+      })
+      .appendTo('body');
+
+      $('<i>')
+        .css({
+          display:'inline-block',
+          backgroundImage:'url(reelSpin-480x400.png)',
+          width:68,
+          height:200,
+          backgroundPosition:'-138px 0'
+        })
+        .appendTo('body');
+
+});*/
+
+var i = function( x ) {
+//this.width = width == 68;
+$('<i>').appendTo('body').css({
+  display:'inline-block',
+  backgroundImage:'url(reelSpin-480x400.png)',
+  width:68,
+  height:200,
+  backgroundPosition:x+'px 0'
+});
+ }
+
+$( document ).ready( function() {
+
+    i(0);
+    var posx = 0;
+
+    $( '#start' ).on('click', function() {
+      posx-=68.5;
+      // if(this.bgposx -= 68)
+      $('i').css({
+        backgroundPosition:posx+'px 0'
+      })
+    })
+
+    /*i(-69);
+    i(-138);
+    i(-207);
+    i(-276);
+    i(-345);
+    i(-414);*/
+  })
+
+
+    </script>
+  </head>
+
+  <body><!--
+<img src="reelSpin-480x400.png" alt="">
+<i class="monster-darkgreen"></i>
+<i class="monster-yellow"></i>
+<i class="monster-blue"></i>-->
+
+<button id="start" type="btn" >start</button>
+  </body>
+</html>
